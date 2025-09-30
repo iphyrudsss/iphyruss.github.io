@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Username Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 min-h-screen flex flex-col">
+    <div class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-2xl w-full">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Random Username Generator
+            </h1>
+            
+            <div class="mb-6">
+                <label class="block text-lg font-semibold mb-3 text-gray-700">Filter Options:</label>
+                <div class="flex flex-wrap gap-3">
+                    <label class="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                        <input type="checkbox" id="funny" class="filter-checkbox w-4 h-4 text-purple-600 rounded focus:ring-2 focus:ring-purple-500">
+                        <span class="text-gray-700">😄 Funny</span>
+                    </label>
+                    <label class="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                        <input type="checkbox" id="cool" class="filter-checkbox w-4 h-4 text-purple-600 rounded focus:ring-2 focus:ring-purple-500">
+                        <span class="text-gray-700">😎 Cool</span>
+                    </label>
+                    <label class="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                        <input type="checkbox" id="short" class="filter-checkbox w-4 h-4 text-purple-600 rounded focus:ring-2 focus:ring-purple-500">
+                        <span class="text-gray-700">⚡ Short</span>
+                    </label>
+                    <label class="flex items-center space-x-2 bg-gray-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                        <input type="checkbox" id="aesthetic" class="filter-checkbox w-4 h-4 text-purple-600 rounded focus:ring-2 focus:ring-purple-500">
+                        <span class="text-gray-700">✨ Aesthetic</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xl py-4 px-8 rounded-xl hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition duration-200 shadow-lg">
+                Generate Username
+            </button>
+
+            <div id="result" class="mt-6 hidden">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200">
+                    <div class="flex items-center justify-between">
+                        <div class="flex-grow">
+                            <p class="text-sm text-gray-600 mb-1">Your Username:</p>
+                            <p id="username" class="text-3xl font-bold text-purple-600 break-all"></p>
+                        </div>
+                        <button id="copyBtn" class="ml-4 bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition transform hover:scale-105 flex-shrink-0">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="historySection" class="mt-8 hidden">
+                <h2 class="text-xl font-bold text-gray-700 mb-3">Recent History:</h2>
+                <div id="history" class="space-y-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-6 text-center text-gray-600">
+        <p class="text-lg">Made with ❤️</p>
+    </footer>
+
+    <div id="notification" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300">
+        Copied to clipboard!
+    </div>
+
+    <script src="scrypt.js"></script>
+</body>
+</html>
